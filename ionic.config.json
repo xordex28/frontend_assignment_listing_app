@@ -1,5 +1,7 @@
 {
-  "name": "frontend_assignment_listing_app",
-  "integrations": {},
+  "name": "Photo Gallery NG Capacitor",
+  "integrations": {
+    "capacitor": {}
+  },
   "type": "angular"
 }

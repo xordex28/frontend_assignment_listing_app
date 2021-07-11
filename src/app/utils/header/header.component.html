@@ -1,0 +1,15 @@
+<ion-header class="app-header-height mat-elevation-z3">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start" *ngIf="modal === false">
+      <ion-menu-button menu="siderbar"></ion-menu-button>
+    </ion-buttons>
+    <ion-buttons slot="start" *ngIf="backButton === true">
+      <ion-back-button class="ion-float-left" defaultHref="app/categories"></ion-back-button>
+    </ion-buttons>
+    <div class="center">
+      <ion-title class="title">
+        {{titulo}}
+      </ion-title>
+    </div>
+  </ion-toolbar>
+</ion-header>

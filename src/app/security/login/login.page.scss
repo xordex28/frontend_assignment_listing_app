@@ -1,0 +1,69 @@
+.full {
+  background-color   : #428cff;
+  background-image   : url('../../../assets/backgroud/font.jpg');
+  background-repeat  : no-repeat;
+  background-position: center;
+  background-size    : cover;
+  height             : 100%;
+  display            : flex;
+  justify-content    : center;
+  align-items        : center;
+}
+
+.full:before {
+  content         : '';
+  position        : absolute;
+  top             : 0;
+  bottom          : 0;
+  left            : 0;
+  right           : 0;
+  background-color: rgba(66, 140, 255, 0.2);
+}
+
+.logo {
+  display        : flex;
+  justify-content: center;
+}
+
+.form {
+  width           : 400px;
+  height          : 500px;
+  background-color: #fff;
+  border-radius   : 15px;
+  z-index: 2;
+}
+
+.title {
+  color        : #428cff;
+  text-align   : center;
+  margin-top   : 15px;
+  margin-bottom: 0px;
+}
+
+.other-auth-options-row {
+  text-align: center;
+}
+
+.inputs-list {
+  --ion-item-background: var(--page-background);
+
+  .input-item {
+    --padding-start    : 0px;
+    --padding-end      : 0px;
+    --inner-padding-end: 0px;
+  }
+
+  .error-container {
+    .error-message {
+      margin     : calc(var(--page-margin) / 2) 0px;
+      display    : flex;
+      align-items: center;
+      color      : var(--ion-color-danger);
+      font-size  : 14px;
+
+      ion-icon {
+        padding-inline-end: calc(var(--page-margin) / 2);
+      }
+    }
+  }
+}
