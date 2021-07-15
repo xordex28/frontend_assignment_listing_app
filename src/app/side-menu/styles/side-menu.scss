@@ -7,6 +7,13 @@
   --page-headers-shadow-color: rgba(var(--ion-color-darkest-rgb), 0.4);
 }
 
+.footer {
+  text-align: center;
+  ion-title{
+    font-size : 1.1em;
+  }
+}
+
 .user-name {
   color: white;
 }

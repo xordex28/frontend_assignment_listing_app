@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { SplashScreen } from '@capacitor/splash-screen';
+import { AuthService } from './security/services/auth.service';
 
 interface Info {
   version?: string;
@@ -22,7 +23,7 @@ export class AppComponent {
     version: "1.0.0",
     name: "App"
   };
-  constructor() {
+  constructor(private authService: AuthService) {
     this.initializeApp();
   }
 
@@ -34,5 +35,11 @@ export class AppComponent {
         https://capacitor.ionicframework.com/docs/apis/splash-screen#hiding-the-splash-screen
     */
     SplashScreen.hide();
+  }
+
+  logout() {
+    this.authService.logout().subscribe((resp) => {
+      console.log(resp);
+    });
   }
 }

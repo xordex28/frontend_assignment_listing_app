@@ -36,6 +36,7 @@ export class AuthService extends API<User> {
       })
       .pipe(
         map((response: User) => {
+          localStorage.setItem(API.ID, response._id);
           localStorage.setItem(API.NAME, (response.firstName + ' ' + response.lastName));
           localStorage.setItem(API.EMAIL, email);
           localStorage.setItem(API.TOKEN, response.accesToken);
@@ -66,21 +67,24 @@ export class AuthService extends API<User> {
       );
   }
 
-  public logout() {
-    return new Observable<void>((observe: Observer<void>) => {
-      localStorage.removeItem(API.TOKEN);
-      localStorage.removeItem(API.DATE_LAST_TOKEN_REFRESH);
-      localStorage.removeItem(API.EMAIL);
-      localStorage.removeItem(API.NAME);
-      localStorage.clear();
-      this.$actual = null;
-      this.user_actual.next(null);
-      this.user_actual.subscribe();
-      observe.next();
-      observe.complete();
-      this.router.navigate(['/security/login']);
-    });
+  public logout(): Observable<void> {
+    const id = localStorage.getItem(API.ID);
+    return this.http.post<void>(`${this.URL_AUTH}/logout/${id}`, {})
+      .pipe(
+        map(() => {
+          localStorage.removeItem(API.TOKEN);
+          localStorage.removeItem(API.DATE_LAST_TOKEN_REFRESH);
+          localStorage.removeItem(API.EMAIL);
+          localStorage.removeItem(API.NAME);
+          localStorage.clear();
+          this.$actual = null;
+          this.user_actual.next(null);
+          this.user_actual.subscribe();
+          this.router.navigate(['/security/login']);
+        })
+      );
   }
+
 
   public actual() {
     if (this.user_actual.value && localStorage.getItem(API.TOKEN)) {

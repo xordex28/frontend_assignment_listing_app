@@ -50,7 +50,7 @@ export class LoginPage implements OnInit {
         console.log(data);
         this.toastService.show('Ingreso Exitoso', 'Bienvenido al sistema', 'success');
         this.cargando = false;
-        this.router.navigate(['/app/tab1']);
+        this.router.navigate(['/app/home']);
 
       }, (error) => {
         console.log(error);

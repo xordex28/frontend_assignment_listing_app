@@ -6,21 +6,25 @@ import { FormsModule } from '@angular/forms';
 import { HeaderComponent } from './header/header.component';
 import { ShowHidePasswordComponent } from './show-hide-password/show-hide-password.component';
 
-
+import { MatTableModule } from '@angular/material/table';
+import { GenericTableComponent } from './generic-table/generic-table.component';
 
 @NgModule({
   declarations: [
     HeaderComponent,
-    ShowHidePasswordComponent
+    ShowHidePasswordComponent,
+    GenericTableComponent
   ],
   imports: [
     CommonModule,
     IonicModule,
-    FormsModule
+    FormsModule,
+    MatTableModule
   ],
   exports: [
     HeaderComponent,
-    ShowHidePasswordComponent
+    ShowHidePasswordComponent,
+    GenericTableComponent
   ]
 })
 export class UtilsModule { }

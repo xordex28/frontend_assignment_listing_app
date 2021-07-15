@@ -1,47 +1,57 @@
 <ion-app [dir]="textDir">
-  <ion-split-pane contentId="menu-content" when="false">
-    <ion-menu menuId="siderbar" contentId="menu-content" class="app-sidemenu">
-      <ion-header>
-        <ion-toolbar>
-          <ion-row class="user-details-wrapper">
-            <ion-col class="item-menu" size="12">
-              <img height="100px" src="http://www.grupobtp.com/wp-content/uploads/2018/10/logoo-300x232.png" alt="">
-            </ion-col>
-            <ion-col class="user-info-wrapper item-menu" size="12">
-              <h3 class="user-name">{{info?.name}} Version: {{info?.version}}</h3>
-            </ion-col>
-          </ion-row>
-        </ion-toolbar>
-      </ion-header>
-      <ion-content>
-        <ion-list>
-          <ion-list-header style="cursor: pointer;" routerLink="/app/tab1">
-            <ion-label class="menu-item">Inicio</ion-label>
+  <ion-content>
+    <ion-split-pane contentId="menu-content" when="false">
+      <ion-menu menuId="siderbar" contentId="menu-content" class="app-sidemenu">
+        <ion-header>
+          <ion-toolbar>
+            <ion-row class="user-details-wrapper">
+              <ion-col class="item-menu" size="12">
+                <img height="100px" src="http://www.grupobtp.com/wp-content/uploads/2018/10/logoo-300x232.png" alt="">
+              </ion-col>
+              <ion-col class="user-info-wrapper item-menu" size="12">
+                <h3 class="user-name">{{info?.name}} Version: {{info?.version}}</h3>
+              </ion-col>
+              <ion-col class="user-info-wrapper item-menu" size="12">
+                <ion-button fill="outline" color="light" (click)="logout()">
+                  Cerrar sesión
+                </ion-button>
+              </ion-col>
+            </ion-row>
+          </ion-toolbar>
+        </ion-header>
+        <ion-content>
+          <ion-list>
+            <ion-list-header style="cursor: pointer;" routerLink="/app/tab1">
+              <ion-label class="menu-item">Inicio</ion-label>
+              <ion-menu-toggle>
+                <ion-item >
+                  <ion-icon slot="start" [name]="'business-outline'">
+                  </ion-icon>
+                </ion-item>
+              </ion-menu-toggle>
+            </ion-list-header>
+            <ion-list-header>
+              <ion-label class="menu-item">Seguridad</ion-label>
+            </ion-list-header>
+            
             <ion-menu-toggle>
-              <ion-item >
-                <ion-icon slot="start" [name]="'business-outline'">
+              <ion-item routerLink="/app/user">
+                <ion-icon slot="start" [name]="'person-circle-outline'">
                 </ion-icon>
+                <ion-label style="color: rgba(0, 0, 0, 0.705);">
+                  Usuarios
+                </ion-label>
               </ion-item>
             </ion-menu-toggle>
-          </ion-list-header>
-          <ion-list-header>
-            <ion-label class="menu-item">Seguridad</ion-label>
-          </ion-list-header>
-          
-          <ion-menu-toggle>
-            <ion-item routerLink="/app/user">
-              <ion-icon slot="start" [name]="'person-circle-outline'">
-              </ion-icon>
-              <ion-label style="color: rgba(0, 0, 0, 0.705);">
-                Usuarios
-              </ion-label>
-            </ion-item>
-          </ion-menu-toggle>
-
-
-        </ion-list>
-      </ion-content>
-    </ion-menu>
-    <ion-router-outlet id="menu-content"></ion-router-outlet>
-  </ion-split-pane>
+          </ion-list>
+        </ion-content>
+      </ion-menu>
+      <ion-router-outlet id="menu-content"></ion-router-outlet>
+    </ion-split-pane>
+  </ion-content>
+  <!-- <ion-footer class="footer">
+    <ion-toolbar>
+      <ion-title>© 2021 derechos reservados por localhost:8100</ion-title>
+    </ion-toolbar>
+  </ion-footer> -->
 </ion-app>

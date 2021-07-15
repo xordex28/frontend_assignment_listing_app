@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ModulesComponent } from './modules/modules.component';
 import { TabsPage } from './tabs.page';
 
 const routes: Routes = [
@@ -8,8 +9,8 @@ const routes: Routes = [
     component: TabsPage,
     children: [
       {
-        path: 'tab1',
-        loadChildren: () => import('../tab1/tab1.module').then(m => m.Tab1PageModule)
+        path: 'home',
+        component: ModulesComponent
       },
       {
         path: 'user',
@@ -17,8 +18,8 @@ const routes: Routes = [
       }]
   },
   {
-    path: '',
-    redirectTo: 'tab1',
+    path: '**',
+    redirectTo: 'home',
     pathMatch: 'full'
   },
 
