@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { SplashScreen } from '@capacitor/splash-screen';
 import { AuthService } from './security/services/auth.service';
 
@@ -23,7 +24,7 @@ export class AppComponent {
     version: "1.0.0",
     name: "App"
   };
-  constructor(private authService: AuthService) {
+  constructor(private authService: AuthService,private router:Router) {
     this.initializeApp();
   }
 
@@ -38,8 +39,10 @@ export class AppComponent {
   }
 
   logout() {
+    console.log('cerrando sesion');
+
     this.authService.logout().subscribe((resp) => {
-      console.log(resp);
+      this.router.navigateByUrl('/security/login')
     });
   }
 }

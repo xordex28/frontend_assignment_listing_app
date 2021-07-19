@@ -15,13 +15,18 @@ const routes: Routes = [
       {
         path: 'user',
         loadChildren: () => import('./modules/user/user.module').then(m => m.UserPageModule)
-      }]
+      },
+      {
+        path: 'role',
+        loadChildren: () => import('./modules/role/role.module').then(m => m.RolePageModule)
+      }
+    ]
   },
   {
     path: '**',
     redirectTo: 'home',
     pathMatch: 'full'
-  },
+  }
 
 ];
 

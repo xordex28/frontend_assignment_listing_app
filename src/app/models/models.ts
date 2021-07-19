@@ -9,11 +9,29 @@ export interface User {
     accesToken?: string;
     firstName?: string;
     lastName?: string;
-    updatedDate?: string;
-    role?: string | object;
-    permits?: [];
+    role?: string | Role;
+    permits?: PermitApproved[];
     loggedIn?: boolean;
+    createdDate?: string;
+    updatedDate?: string;
     active?: boolean;
 }
 
+export interface Role {
+    _id?: string;
+    description?: string;
+    canApprove?: boolean;
+    canSuper?: boolean;
+    permits?: PermitApproved[];
+    createdDate?: string;
+    updatedDate?: string;
+    active?: boolean;
+}
 
+export interface PermitApproved {
+    client?: string;
+    categories?: {
+        category?: string;
+        canApprove?: boolean;
+    }[]
+}

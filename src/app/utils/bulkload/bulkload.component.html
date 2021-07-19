@@ -1,0 +1,29 @@
+<app-header [titulo]="titulo" [modal]="true"></app-header>
+<ion-content class="ion-padding ion-margin">
+    <input type="file" (change)="selectFile($event)" multiple="false" />
+<div *ngIf="errors"> 
+    <ion-chip *ngFor="let error of content_errors"  color="danger">
+        <ion-label>Hay un conflito en la fila {{error.row }}, {{error.error }}</ion-label>
+      </ion-chip>
+</div>
+
+    <!-- <ion-list *ngIf="errors">
+        <ion-item *ngFor="let error of content_errors" >
+            <p class="txt">
+                Hay un conflito en la fila {{error.row }}, {{error.error }}
+            </p>
+
+                <ion-label>{{error.error }}</ion-label>
+                <ion-badge color="warning" slot="end">Linea {{error.row }}</ion-badge>      
+        </ion-item>
+    </ion-list> -->
+</ion-content>
+<!-- <ion-footer>
+    <ion-grid>
+        <ion-row class="ion-justify-content-center">
+            <ion-button expand="block" color="primary">
+                Guardar
+            </ion-button>
+        </ion-row>
+    </ion-grid>
+</ion-footer> -->

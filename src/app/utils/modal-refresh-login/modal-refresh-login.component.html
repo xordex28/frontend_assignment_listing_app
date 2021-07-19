@@ -1,0 +1,67 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{isAllow?'Verificacion de Ingreso':'Desea Extender Su Sesion:'}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="extend">
+  <div  *ngIf="!isAllow">
+    <div class="modalExtend"><ion-button (click)="extend()" color="success">
+      Aceptar
+    </ion-button>
+    <ion-button (click)="notExtend()"  color="danger">
+      Rechazar
+    </ion-button></div>
+    <p *ngIf="getTimed > 0">Tiempo restante: {{ getTimed - initialTime }} Segundos.</p> 
+  </div>
+  <div *ngIf="isAllow">
+    <form [formGroup]="loginsForm" (ngSubmit)="doLogin()">
+      <ion-grid>
+        <ion-row>
+          <ion-col >
+            <div>
+              <ion-list class="inputs-list" lines="full">
+                <ion-item class="input-item">
+                  <ion-input type="email" placeholder="Email" formControlName="email" clearInput autocapitalize="off"
+                    inputmode="email"></ion-input>
+                </ion-item>
+                <div class="error-container">
+                  <ng-container *ngFor="let validation of validation_messages.email">
+                    <div class="error-message"
+                      *ngIf="loginsForm.get('email').hasError(validation.type) && (loginsForm.get('email').dirty || loginsForm.get('email').touched)">
+                      <ion-icon name="information-circle-outline"></ion-icon>
+                      <span>{{ validation.message }}</span>
+                    </div>
+                  </ng-container>
+                </div>
+  
+                <ion-item class="input-item">
+                  <app-show-hide-password>
+                    <ion-input type="password" placeholder="Password" formControlName="password"></ion-input>
+                  </app-show-hide-password>
+                </ion-item>
+                <div class="error-container">
+                  <ng-container *ngFor="let validation of validation_messages.password">
+                    <div class="error-message"
+                      *ngIf="loginsForm.get('password').hasError(validation.type) && (loginsForm.get('password').dirty || loginsForm.get('password').touched)">
+                      <ion-icon name="information-circle-outline"></ion-icon>
+                      <span>{{ validation.message }}</span>
+                    </div>
+                  </ng-container>
+                </div>
+              </ion-list>
+            </div>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size-md="4" offset-md="4">
+            <ion-button class="login-btn" type="submit" expand="block" [disabled]="!loginsForm.valid || cargando">Log In
+            </ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </form>
+  </div>
+</ion-content>

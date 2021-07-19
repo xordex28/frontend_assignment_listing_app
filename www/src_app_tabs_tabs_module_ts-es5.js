@@ -1,7 +1,293 @@
 (function () {
   function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
+  function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+  function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
   (self["webpackChunkphoto_gallery_ng_capacitor"] = self["webpackChunkphoto_gallery_ng_capacitor"] || []).push([["src_app_tabs_tabs_module_ts"], {
+    /***/
+    13349:
+    /*!***************************************************!*\
+      !*** ./src/app/tabs/modules/modules.component.ts ***!
+      \***************************************************/
+
+    /***/
+    function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony export */
+
+
+      __webpack_require__.d(__webpack_exports__, {
+        /* harmony export */
+        "ModulesComponent": function ModulesComponent() {
+          return (
+            /* binding */
+            _ModulesComponent
+          );
+        }
+        /* harmony export */
+
+      });
+      /* harmony import */
+
+
+      var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+      /*! @angular/core */
+      37716);
+      /* harmony import */
+
+
+      var _utils_header_header_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+      /*! ../../utils/header/header.component */
+      69475);
+      /* harmony import */
+
+
+      var _ionic_angular__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+      /*! @ionic/angular */
+      80476);
+
+      var _ModulesComponent = /*#__PURE__*/function () {
+        function _ModulesComponent() {
+          _classCallCheck(this, _ModulesComponent);
+        }
+
+        _createClass(_ModulesComponent, [{
+          key: "ngOnInit",
+          value: function ngOnInit() {}
+        }]);
+
+        return _ModulesComponent;
+      }();
+
+      _ModulesComponent.ɵfac = function ModulesComponent_Factory(t) {
+        return new (t || _ModulesComponent)();
+      };
+
+      _ModulesComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComponent"]({
+        type: _ModulesComponent,
+        selectors: [["app-modules"]],
+        decls: 64,
+        vars: 0,
+        consts: [["titulo", "Dashboard"], [1, "ion-padding"], ["size-xs", "12", "size-md", "6", "size-lg", "4", "size-xl", "3"], ["src", "../../../assets/images/madison.jpg"]],
+        template: function ModulesComponent_Template(rf, ctx) {
+          if (rf & 1) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](0, "app-header", 0);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](1, "ion-content", 1);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](2, "ion-grid");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](3, "ion-row");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](4, "ion-col", 2);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](5, "ion-card");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](6, "img", 3);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](7, "ion-card-header");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](8, "ion-card-subtitle");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](9, "Destination");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](10, "ion-card-title");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](11, "Madison, WI");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](12, "ion-card-content");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](13, " Founded in 1829 on an isthmus between Lake Monona and Lake Mendota, Madison was named the capital of the Wisconsin Territory in 1836. ");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](14, "ion-col", 2);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](15, "ion-card");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](16, "img", 3);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](17, "ion-card-header");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](18, "ion-card-subtitle");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](19, "Destination");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](20, "ion-card-title");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](21, "Madison, WI");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](22, "ion-card-content");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](23, " Founded in 1829 on an isthmus between Lake Monona and Lake Mendota, Madison was named the capital of the Wisconsin Territory in 1836. ");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](24, "ion-col", 2);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](25, "ion-card");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](26, "img", 3);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](27, "ion-card-header");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](28, "ion-card-subtitle");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](29, "Destination");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](30, "ion-card-title");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](31, "Madison, WI");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](32, "ion-card-content");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](33, " Founded in 1829 on an isthmus between Lake Monona and Lake Mendota, Madison was named the capital of the Wisconsin Territory in 1836. ");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](34, "ion-col", 2);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](35, "ion-card");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](36, "img", 3);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](37, "ion-card-header");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](38, "ion-card-subtitle");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](39, "Destination");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](40, "ion-card-title");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](41, "Madison, WI");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](42, "ion-card-content");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](43, " Founded in 1829 on an isthmus between Lake Monona and Lake Mendota, Madison was named the capital of the Wisconsin Territory in 1836. ");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](44, "ion-col", 2);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](45, "ion-card");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](46, "img", 3);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](47, "ion-card-header");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](48, "ion-card-subtitle");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](49, "Destination");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](50, "ion-card-title");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](51, "Madison, WI");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](52, "ion-card-content");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](53, " Founded in 1829 on an isthmus between Lake Monona and Lake Mendota, Madison was named the capital of the Wisconsin Territory in 1836. ");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](54, "ion-col", 2);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](55, "ion-card");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](56, "img", 3);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](57, "ion-card-header");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](58, "ion-card-subtitle");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](59, "Destination");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](60, "ion-card-title");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](61, "Madison, WI");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](62, "ion-card-content");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](63, " Founded in 1829 on an isthmus between Lake Monona and Lake Mendota, Madison was named the capital of the Wisconsin Territory in 1836. ");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+          }
+        },
+        directives: [_utils_header_header_component__WEBPACK_IMPORTED_MODULE_0__.HeaderComponent, _ionic_angular__WEBPACK_IMPORTED_MODULE_2__.IonContent, _ionic_angular__WEBPACK_IMPORTED_MODULE_2__.IonGrid, _ionic_angular__WEBPACK_IMPORTED_MODULE_2__.IonRow, _ionic_angular__WEBPACK_IMPORTED_MODULE_2__.IonCol, _ionic_angular__WEBPACK_IMPORTED_MODULE_2__.IonCard, _ionic_angular__WEBPACK_IMPORTED_MODULE_2__.IonCardHeader, _ionic_angular__WEBPACK_IMPORTED_MODULE_2__.IonCardSubtitle, _ionic_angular__WEBPACK_IMPORTED_MODULE_2__.IonCardTitle, _ionic_angular__WEBPACK_IMPORTED_MODULE_2__.IonCardContent],
+        styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJtb2R1bGVzLmNvbXBvbmVudC5zY3NzIn0= */"]
+      });
+      /***/
+    },
+
     /***/
     80530:
     /*!*********************************************!*\
@@ -30,51 +316,60 @@
       /* harmony import */
 
 
-      var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+      var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
       /*! @angular/router */
       39895);
       /* harmony import */
 
 
-      var _tabs_page__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+      var _modules_modules_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+      /*! ./modules/modules.component */
+      13349);
+      /* harmony import */
+
+
+      var _tabs_page__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
       /*! ./tabs.page */
       7942);
       /* harmony import */
 
 
-      var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+      var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
       /*! @angular/core */
       37716);
 
       var routes = [{
         path: '',
-        component: _tabs_page__WEBPACK_IMPORTED_MODULE_0__.TabsPage,
+        component: _tabs_page__WEBPACK_IMPORTED_MODULE_1__.TabsPage,
         children: [{
-          path: 'tab1',
-          loadChildren: function loadChildren() {
-            return Promise.all(
-            /*! import() */
-            [__webpack_require__.e("common"), __webpack_require__.e("src_app_tab1_tab1_module_ts")]).then(__webpack_require__.bind(__webpack_require__,
-            /*! ../tab1/tab1.module */
-            2168)).then(function (m) {
-              return m.Tab1PageModule;
-            });
-          }
+          path: 'home',
+          component: _modules_modules_component__WEBPACK_IMPORTED_MODULE_0__.ModulesComponent
         }, {
           path: 'user',
           loadChildren: function loadChildren() {
             return Promise.all(
             /*! import() */
-            [__webpack_require__.e("common"), __webpack_require__.e("src_app_tabs_modules_user_user_module_ts")]).then(__webpack_require__.bind(__webpack_require__,
+            [__webpack_require__.e("default-node_modules_angular_material___ivy_ngcc___fesm2015_input_js-src_app_services_role_se-3e47cd"), __webpack_require__.e("src_app_tabs_modules_user_user_module_ts")]).then(__webpack_require__.bind(__webpack_require__,
             /*! ./modules/user/user.module */
             81002)).then(function (m) {
               return m.UserPageModule;
             });
           }
+        }, {
+          path: 'role',
+          loadChildren: function loadChildren() {
+            return Promise.all(
+            /*! import() */
+            [__webpack_require__.e("default-node_modules_angular_material___ivy_ngcc___fesm2015_input_js-src_app_services_role_se-3e47cd"), __webpack_require__.e("src_app_tabs_modules_role_role_module_ts")]).then(__webpack_require__.bind(__webpack_require__,
+            /*! ./modules/role/role.module */
+            44939)).then(function (m) {
+              return m.RolePageModule;
+            });
+          }
         }]
       }, {
-        path: '',
-        redirectTo: 'tab1',
+        path: '**',
+        redirectTo: 'home',
         pathMatch: 'full'
       }];
 
@@ -86,17 +381,17 @@
         return new (t || _TabsPageRoutingModule)();
       };
 
-      _TabsPageRoutingModule.ɵmod = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineNgModule"]({
+      _TabsPageRoutingModule.ɵmod = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineNgModule"]({
         type: _TabsPageRoutingModule
       });
-      _TabsPageRoutingModule.ɵinj = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjector"]({
-        imports: [[_angular_router__WEBPACK_IMPORTED_MODULE_2__.RouterModule.forChild(routes)], _angular_router__WEBPACK_IMPORTED_MODULE_2__.RouterModule]
+      _TabsPageRoutingModule.ɵinj = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineInjector"]({
+        imports: [[_angular_router__WEBPACK_IMPORTED_MODULE_3__.RouterModule.forChild(routes)], _angular_router__WEBPACK_IMPORTED_MODULE_3__.RouterModule]
       });
 
       (function () {
-        (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵsetNgModuleScope"](_TabsPageRoutingModule, {
-          imports: [_angular_router__WEBPACK_IMPORTED_MODULE_2__.RouterModule],
-          exports: [_angular_router__WEBPACK_IMPORTED_MODULE_2__.RouterModule]
+        (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵsetNgModuleScope"](_TabsPageRoutingModule, {
+          imports: [_angular_router__WEBPACK_IMPORTED_MODULE_3__.RouterModule],
+          exports: [_angular_router__WEBPACK_IMPORTED_MODULE_3__.RouterModule]
         });
       })();
       /***/
@@ -131,19 +426,19 @@
       /* harmony import */
 
 
-      var _ionic_angular__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+      var _ionic_angular__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
       /*! @ionic/angular */
       80476);
       /* harmony import */
 
 
-      var _angular_common__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+      var _angular_common__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
       /*! @angular/common */
       38583);
       /* harmony import */
 
 
-      var _angular_forms__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+      var _angular_forms__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
       /*! @angular/forms */
       3679);
       /* harmony import */
@@ -155,13 +450,25 @@
       /* harmony import */
 
 
-      var _tabs_page__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+      var _utils_utils_module__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+      /*! ../utils/utils.module */
+      24603);
+      /* harmony import */
+
+
+      var _tabs_page__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
       /*! ./tabs.page */
       7942);
       /* harmony import */
 
 
-      var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+      var _modules_modules_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+      /*! ./modules/modules.component */
+      13349);
+      /* harmony import */
+
+
+      var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
       /*! @angular/core */
       37716);
 
@@ -173,17 +480,17 @@
         return new (t || _TabsPageModule)();
       };
 
-      _TabsPageModule.ɵmod = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineNgModule"]({
+      _TabsPageModule.ɵmod = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineNgModule"]({
         type: _TabsPageModule
       });
-      _TabsPageModule.ɵinj = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineInjector"]({
-        imports: [[_ionic_angular__WEBPACK_IMPORTED_MODULE_3__.IonicModule, _angular_common__WEBPACK_IMPORTED_MODULE_4__.CommonModule, _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormsModule, _tabs_routing_module__WEBPACK_IMPORTED_MODULE_0__.TabsPageRoutingModule]]
+      _TabsPageModule.ɵinj = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineInjector"]({
+        imports: [[_ionic_angular__WEBPACK_IMPORTED_MODULE_5__.IonicModule, _angular_common__WEBPACK_IMPORTED_MODULE_6__.CommonModule, _angular_forms__WEBPACK_IMPORTED_MODULE_7__.FormsModule, _tabs_routing_module__WEBPACK_IMPORTED_MODULE_0__.TabsPageRoutingModule, _utils_utils_module__WEBPACK_IMPORTED_MODULE_1__.UtilsModule]]
       });
 
       (function () {
-        (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵsetNgModuleScope"](_TabsPageModule, {
-          declarations: [_tabs_page__WEBPACK_IMPORTED_MODULE_1__.TabsPage],
-          imports: [_ionic_angular__WEBPACK_IMPORTED_MODULE_3__.IonicModule, _angular_common__WEBPACK_IMPORTED_MODULE_4__.CommonModule, _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormsModule, _tabs_routing_module__WEBPACK_IMPORTED_MODULE_0__.TabsPageRoutingModule]
+        (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵsetNgModuleScope"](_TabsPageModule, {
+          declarations: [_tabs_page__WEBPACK_IMPORTED_MODULE_2__.TabsPage, _modules_modules_component__WEBPACK_IMPORTED_MODULE_3__.ModulesComponent],
+          imports: [_ionic_angular__WEBPACK_IMPORTED_MODULE_5__.IonicModule, _angular_common__WEBPACK_IMPORTED_MODULE_6__.CommonModule, _angular_forms__WEBPACK_IMPORTED_MODULE_7__.FormsModule, _tabs_routing_module__WEBPACK_IMPORTED_MODULE_0__.TabsPageRoutingModule, _utils_utils_module__WEBPACK_IMPORTED_MODULE_1__.UtilsModule]
         });
       })();
       /***/
@@ -227,57 +534,141 @@
       var _ionic_angular__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
       /*! @ionic/angular */
       80476);
+      /* harmony import */
 
-      var _TabsPage = function _TabsPage() {
-        _classCallCheck(this, _TabsPage);
-      };
+
+      var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+      /*! @angular/router */
+      39895);
+      /* harmony import */
+
+
+      var _angular_common__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+      /*! @angular/common */
+      38583);
+
+      function TabsPage_ion_tab_bar_1_ion_tab_button_1_Template(rf, ctx) {
+        if (rf & 1) {
+          var _r3 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "ion-tab-button", 7);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function TabsPage_ion_tab_bar_1_ion_tab_button_1_Template_ion_tab_button_click_0_listener() {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r3);
+
+            var ctx_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
+
+            return ctx_r2.onPreview();
+          });
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](1, "ion-icon", 8);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "ion-label");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](3, "Anterior");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        }
+      }
+
+      function TabsPage_ion_tab_bar_1_Template(rf, ctx) {
+        if (rf & 1) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "ion-tab-bar", 1);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, TabsPage_ion_tab_bar_1_ion_tab_button_1_Template, 4, 0, "ion-tab-button", 2);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "ion-tab-button", 3);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](3, "ion-icon", 4);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "ion-label");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](5, "Inicio");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](6, "ion-tab-button", 5);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](7, "ion-icon", 6);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](8, "ion-label");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](9, "Usuarios");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        }
+
+        if (rf & 2) {
+          var ctx_r0 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx_r0.router.url !== "/app/home");
+        }
+      }
+
+      var _TabsPage = /*#__PURE__*/function () {
+        function _TabsPage(platform, router) {
+          var _this = this;
+
+          _classCallCheck(this, _TabsPage);
+
+          this.platform = platform;
+          this.router = router;
+          this.isMobile = false;
+          this.platform.ready().then(function () {
+            if (_this.platform.width() > 768) {
+              _this.isMobile = false;
+            } else {
+              _this.isMobile = true;
+            }
+          });
+        }
+
+        _createClass(_TabsPage, [{
+          key: "onPreview",
+          value: function onPreview() {
+            window.history.back();
+          }
+        }]);
+
+        return _TabsPage;
+      }();
 
       _TabsPage.ɵfac = function TabsPage_Factory(t) {
-        return new (t || _TabsPage)();
+        return new (t || _TabsPage)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_ionic_angular__WEBPACK_IMPORTED_MODULE_1__.Platform), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_2__.Router));
       };
 
       _TabsPage.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
         type: _TabsPage,
         selectors: [["app-tabs"]],
-        decls: 10,
-        vars: 0,
-        consts: [["slot", "bottom"], ["tab", "tab1"], ["name", "triangle"], ["tab", "user"], ["name", "person-circle-outline"]],
+        decls: 2,
+        vars: 1,
+        consts: [["slot", "bottom", 4, "ngIf"], ["slot", "bottom"], [3, "click", 4, "ngIf"], ["tab", "home"], ["name", "square"], ["tab", "user"], ["name", "person-circle-outline"], [3, "click"], ["name", "triangle"]],
         template: function TabsPage_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "ion-tabs");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "ion-tab-bar", 0);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "ion-tab-button", 1);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](3, "ion-icon", 2);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "ion-label");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](5, "Inicio");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](6, "ion-tab-button", 3);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](7, "ion-icon", 4);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](8, "ion-label");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](9, "Usuarios");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, TabsPage_ion_tab_bar_1_Template, 10, 1, "ion-tab-bar", 0);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
           }
+
+          if (rf & 2) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.isMobile);
+          }
         },
-        directives: [_ionic_angular__WEBPACK_IMPORTED_MODULE_1__.IonTabs, _ionic_angular__WEBPACK_IMPORTED_MODULE_1__.IonTabBar, _ionic_angular__WEBPACK_IMPORTED_MODULE_1__.IonTabButton, _ionic_angular__WEBPACK_IMPORTED_MODULE_1__.IonIcon, _ionic_angular__WEBPACK_IMPORTED_MODULE_1__.IonLabel],
+        directives: [_ionic_angular__WEBPACK_IMPORTED_MODULE_1__.IonTabs, _angular_common__WEBPACK_IMPORTED_MODULE_3__.NgIf, _ionic_angular__WEBPACK_IMPORTED_MODULE_1__.IonTabBar, _ionic_angular__WEBPACK_IMPORTED_MODULE_1__.IonTabButton, _ionic_angular__WEBPACK_IMPORTED_MODULE_1__.IonIcon, _ionic_angular__WEBPACK_IMPORTED_MODULE_1__.IonLabel],
         styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJ0YWJzLnBhZ2Uuc2NzcyJ9 */"]
       });
       /***/

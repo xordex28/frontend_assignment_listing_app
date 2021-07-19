@@ -16,15 +16,18 @@ import { Router } from '@angular/router';
 import { catchError, switchMap } from 'rxjs/operators';
 import { API } from '../utils/requests/api';
 import * as moment from 'moment';
+import { ModalController } from '@ionic/angular';
+import { ModalRefreshLoginComponent } from '../utils/modal-refresh-login/modal-refresh-login.component';
 
 @Injectable()
 export class JwtInterceptor implements HttpInterceptor, OnDestroy {
     currentAuthRequest = false;
 
-    constructor(private injector: Injector, private router: Router) { }
+    constructor(private injector: Injector, private router: Router,
+        private modalController: ModalController,
+    ) { }
 
     intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-        console.log('Hello desde el intercep');
         const authenticationService = this.injector.get(AuthService);
         // const userService = this.injector.get(UserService);
         const token = localStorage.getItem(API.TOKEN);
@@ -43,29 +46,47 @@ export class JwtInterceptor implements HttpInterceptor, OnDestroy {
          * AccesToken al servidor
          */
 
-        console.log(diffDate, API.TOKEN_DURATION);
+        //TODO: Remplazar el vencimiento del token, levantar pantalla de Verificacion de Ingreso
         if (token) {
-            if (diffDate >= API.TOKEN_DURATION) {
-                const service = authenticationService.gNewAccesToken();
-                return service.pipe(
-                    switchMap((tokenAcces: string) => {
-                        localStorage.setItem(API.TOKEN, tokenAcces);
-                        const date = moment(new Date()).format();
-                        localStorage.setItem(API.DATE_LAST_TOKEN_REFRESH, date);
+            // if (diffDate >= API.TOKEN_DURATION) {
+            //     const service = authenticationService.gNewAccesToken();
+            //     return service.pipe(
+            //         switchMap((tokenAcces: string) => {
+            //             localStorage.setItem(API.TOKEN, tokenAcces);
+            //             const date = moment(new Date()).format();
+            //             localStorage.setItem(API.DATE_LAST_TOKEN_REFRESH, date);
 
-                        request = request.clone({
-                            headers: request.headers.set('Authorization', `Bearer ${tokenAcces}`)
-                        });
-                        return next.handle(request);
-                    }),
-                    catchError((error) => {
-                        authenticationService.logout().subscribe(data => {
+            //             request = request.clone({
+            //                 headers: request.headers.set('Authorization', `Bearer ${tokenAcces}`)
+            //             });
+            //             return next.handle(request);
+            //         }),
+            //         catchError((error) => {
+            //             authenticationService.logout().subscribe(data => {
+            //                 const modal = this.modalController.create({
+            //                     component: ModalRefreshLoginComponent,
+            //                     componentProps: {
+            //                         getTimed: 0
+            //                     },
+            //                     backdropDismiss: false,
+            //                     mode: "md"
+            //                 }).then((modal) => {
+            //                     modal.present().then((currentModal) => {
+            //                         console.log(currentModal);
+            //                         modal.onWillDismiss().then((data) => {
+            //                             if(!data.data){
+            //                                 this.router.navigateByUrl('/security/login')
+            //                             }
+            //                         })
+            //                     });
+            //                 });
+            //             });
 
-                        });
-                        return throwError(error);
-                    })
-                );
-            }
+
+            //             return throwError(error);
+            //         })
+            //     );
+            // }
             request = request.clone({ headers: request.headers.set('Authorization', `Bearer ${token}`) });
         }
 

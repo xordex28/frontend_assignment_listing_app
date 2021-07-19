@@ -1,0 +1,110 @@
+<app-header [titulo]="id?'Editar Usuario':'Crear Usuario'" [backButton]="true"></app-header>
+<ion-content class="ion-padding">
+  <form [formGroup]="newUser">
+    <ion-grid>
+      <ion-row>
+        <ion-col size-xs="12" size-md="6" size-lg="4" size-xl="8" offset-xl="2">
+          <ion-item>
+            <ion-label position="floating">Email:</ion-label>
+            <ion-input (ionBlur)="getUserByUsername()" (ionFocus)="userAlreadyExist = false" [disabled]="id!==''" type="email" required
+              formControlName="username"></ion-input>
+          </ion-item>
+          <div class="error-container">
+            <ng-container *ngFor="let validation of validation_messages.username">
+              <div class="error-message"
+                *ngIf="newUser.get('username').hasError(validation.type) && (newUser.get('username').dirty || newUser.get('username').touched)">
+                <ion-icon name="information-circle-outline"></ion-icon>
+                <span>{{ validation.message }}</span>
+              </div>
+            </ng-container>
+            <ng-container>
+              <div  class="error-message" *ngIf="userAlreadyExist">
+                <ion-icon name="information-circle-outline"></ion-icon>
+                <span>Este correo ya esta en uso</span>
+              </div>
+            </ng-container>
+
+          </div>
+        </ion-col>
+        <ion-col size-xs="12" size-md="6" size-lg="4" size-xl="8" offset-xl="2">
+          <ion-item>
+            <ion-label position="floating">Contraseña:</ion-label>
+            <ion-input type="password" required formControlName="password"></ion-input>
+          </ion-item>
+          <div class="error-container">
+            <ng-container *ngFor="let validation of validation_messages.password">
+              <div class="error-message"
+                *ngIf="newUser.get('password').hasError(validation.type) && (newUser.get('password').dirty || newUser.get('password').touched)">
+                <ion-icon name="information-circle-outline"></ion-icon>
+                <span>{{ validation.message }}</span>
+              </div>
+            </ng-container>
+          </div>
+        </ion-col>
+        <ion-col size-xs="12" size-md="6" size-lg="4" size-xl="8" offset-xl="2">
+          <ion-item>
+            <ion-label position="floating">Nombres:</ion-label>
+            <ion-input required formControlName="firstName"></ion-input>
+          </ion-item>
+          <div class="error-container">
+            <ng-container *ngFor="let validation of validation_messages.firstName">
+              <div class="error-message"
+                *ngIf="newUser.get('firstName').hasError(validation.type) && (newUser.get('firstName').dirty || newUser.get('firstName').touched)">
+                <ion-icon name="information-circle-outline"></ion-icon>
+                <span>{{ validation.message }}</span>
+              </div>
+            </ng-container>
+          </div>
+        </ion-col>
+        <ion-col size-xs="12" size-md="6" size-lg="4" size-xl="8" offset-xl="2">
+          <ion-item>
+            <ion-label position="floating">Apellidos:</ion-label>
+            <ion-input required formControlName="lastName"></ion-input>
+          </ion-item>
+          <div class="error-container">
+            <ng-container *ngFor="let validation of validation_messages.lastName">
+              <div class="error-message"
+                *ngIf="newUser.get('lastName').hasError(validation.type) && (newUser.get('lastName').dirty || newUser.get('lastName').touched)">
+                <ion-icon name="information-circle-outline"></ion-icon>
+                <span>{{ validation.message }}</span>
+              </div>
+            </ng-container>
+          </div>
+        </ion-col>
+        <ion-col size-xs="12" size-md="6" size-lg="4" size-xl="8" offset-xl="2">
+          <ion-item>
+            <ion-label>Roll</ion-label>
+            <ion-select formControlName="role" placeholder="Seleccione un Roll">
+              <ion-select-option value="">Seleccione...</ion-select-option>
+              <ion-select-option *ngFor="let role of roles" [value]="role._id">{{role.description | titlecase}}
+              </ion-select-option>
+            </ion-select>
+          </ion-item>
+          <div class="error-container">
+            <ng-container *ngFor="let validation of validation_messages.role">
+              <div class="error-message"
+                *ngIf="newUser.get('role').hasError(validation.type) && (newUser.get('role').dirty || newUser.get('role').touched)">
+                <ion-icon name="information-circle-outline"></ion-icon>
+                <span>{{ validation.message }}</span>
+              </div>
+            </ng-container>
+          </div>
+        </ion-col>
+        <ion-col size-xs="12" size-md="6" size-lg="4" size-xl="8" offset-xl="2">
+          <ion-item>
+            <ion-label>Activo</ion-label>
+            <ion-checkbox formControlName="active" slot="start"></ion-checkbox>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="12">
+          <ion-button [disabled]="!newUser.valid && !userAlreadyExist" (click)="onSubmit()" expand="block" fill="clear"
+            shape="round">
+            Guardar
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+</ion-content>

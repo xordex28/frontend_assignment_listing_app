@@ -30,7 +30,7 @@
   height          : 500px;
   background-color: #fff;
   border-radius   : 15px;
-  z-index: 2;
+  z-index         : 2;
 }
 
 .title {
@@ -65,5 +65,15 @@
         padding-inline-end: calc(var(--page-margin) / 2);
       }
     }
+  }
+}
+
+@media (max-width: 768px) {
+  .form {
+    width           : 350px;
+    height          : 500px;
+    background-color: #fff;
+    border-radius   : 15px;
+    z-index         : 2;
   }
 }

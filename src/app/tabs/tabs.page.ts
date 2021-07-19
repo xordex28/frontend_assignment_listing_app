@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { Platform } from '@ionic/angular';
 
 @Component({
@@ -8,7 +9,7 @@ import { Platform } from '@ionic/angular';
 })
 export class TabsPage {
   isMobile: boolean = false;
-  constructor(private platform: Platform) {
+  constructor(private platform: Platform, public router: Router) {
     this.platform.ready().then(() => {
       if (this.platform.width() > 768) {
         this.isMobile = false;
@@ -16,6 +17,10 @@ export class TabsPage {
         this.isMobile = true;
       }
     });
+  }
+
+  onPreview() {
+    window.history.back();
   }
 
 }

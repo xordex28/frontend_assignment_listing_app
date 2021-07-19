@@ -33,7 +33,9 @@ $app-theme: mat-light-theme((color: (primary: $app-primary,
 
 
 /** Ionic CSS Variables **/
-:root {
+:root,
+:root[mode="md"],
+:root[mode="ios"] {
   --ion-font-family: 'Poppins', cursive;
 
   --app-narrow-margin: 12px;

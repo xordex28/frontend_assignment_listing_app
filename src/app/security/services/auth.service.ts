@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { API } from '../../utils/requests/api';
-import { User } from '../../models/models';
+import { User, AuthModel } from '../../models/models';
 
 import { throwError, of, BehaviorSubject, Observable, Observer } from 'rxjs';
 
@@ -11,9 +11,8 @@ import { Router } from '@angular/router';
 @Injectable({
   providedIn: 'root'
 })
-export class AuthService extends API<User> {
-  protected URL = `${this.URL_API}users/users/`;
-  protected URL_AUTH = `${this.URL_API}users/`;
+export class AuthService extends API<AuthModel> {
+  protected URL = `${this.URL_API}users/`;
   private user_actual: BehaviorSubject<User> = new BehaviorSubject(null);
   private $actual: Observable<User>;
 
@@ -30,7 +29,7 @@ export class AuthService extends API<User> {
 
   public login(email: string, password: string) {
     return this.http
-      .post(`${this.URL_AUTH}authenticate/`, {
+      .post(`${this.URL}authenticate/`, {
         username: email,
         password
       })
@@ -55,9 +54,7 @@ export class AuthService extends API<User> {
   gNewAccesToken(): Observable<string> {
     const token = localStorage.getItem(API.TOKEN);
     const username = localStorage.getItem(API.EMAIL);
-    console.log('hola 2');
-
-    return this.http.post<string>(`${this.URL_AUTH}/token`, {
+    return this.http.post<string>(`${this.URL}/token`, {
       username,
       tokenRefresh: token
     })
@@ -69,7 +66,7 @@ export class AuthService extends API<User> {
 
   public logout(): Observable<void> {
     const id = localStorage.getItem(API.ID);
-    return this.http.post<void>(`${this.URL_AUTH}/logout/${id}`, {})
+    return this.http.post<void>(`${this.URL}/logout/${id}`, {})
       .pipe(
         map(() => {
           localStorage.removeItem(API.TOKEN);
@@ -80,7 +77,6 @@ export class AuthService extends API<User> {
           this.$actual = null;
           this.user_actual.next(null);
           this.user_actual.subscribe();
-          this.router.navigate(['/security/login']);
         })
       );
   }
@@ -90,7 +86,7 @@ export class AuthService extends API<User> {
     if (this.user_actual.value && localStorage.getItem(API.TOKEN)) {
       return this.user_actual;
     }
-    this.http.get(`${this.URL}current/`).pipe(
+    this.http.get(`${this.URL_API}users/users/current/`).pipe(
       publishReplay(),
       refCount(),
       map((response: User) => {
