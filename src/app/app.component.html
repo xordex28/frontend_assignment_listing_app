@@ -52,6 +52,27 @@
                 </ion-label>
               </ion-item>
             </ion-menu-toggle>
+            <ion-list-header>
+              <ion-label class="menu-item">Configuracion</ion-label>
+            </ion-list-header>
+            <ion-menu-toggle>
+              <ion-item routerLink="/app/category">
+                <ion-icon slot="start" [name]="'person-circle-outline'">
+                </ion-icon>
+                <ion-label style="color: rgba(0, 0, 0, 0.705);">
+                  Categorias
+                </ion-label>
+              </ion-item>
+            </ion-menu-toggle>
+            <ion-menu-toggle>
+              <ion-item routerLink="/app/client">
+                <ion-icon slot="start" [name]="'person-circle-outline'">
+                </ion-icon>
+                <ion-label style="color: rgba(0, 0, 0, 0.705);">
+                  Clientes
+                </ion-label>
+              </ion-item>
+            </ion-menu-toggle>
           </ion-list>
         </ion-content>
       </ion-menu>

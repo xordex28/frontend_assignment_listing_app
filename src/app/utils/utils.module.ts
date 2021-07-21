@@ -13,6 +13,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { BulkloadComponent } from './bulkload/bulkload.component';
 import { CdkTableModule } from '@angular/cdk/table';
 import { ModalRefreshLoginComponent } from './modal-refresh-login/modal-refresh-login.component';
+import { AssingTasksComponent } from './assing-tasks/assing-tasks.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { ModalRefreshLoginComponent } from './modal-refresh-login/modal-refresh-
     ShowHidePasswordComponent,
     GenericTableComponent,
     BulkloadComponent,
-    ModalRefreshLoginComponent
+    ModalRefreshLoginComponent,
+    AssingTasksComponent
   ],
   imports: [
     CommonModule,
@@ -35,7 +37,8 @@ import { ModalRefreshLoginComponent } from './modal-refresh-login/modal-refresh-
   exports: [
     HeaderComponent,
     ShowHidePasswordComponent,
-    GenericTableComponent
+    GenericTableComponent,
+    AssingTasksComponent
   ],
   entryComponents: [
     ModalRefreshLoginComponent

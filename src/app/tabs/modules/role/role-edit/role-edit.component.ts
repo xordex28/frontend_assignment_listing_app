@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { RoleService } from '../../../../services/role.service';
-import { Role } from '../../../../models/models';
+import { PermitApproved, Role } from '../../../../models/models';
 import { ToastService } from '../../../../utils/services/toast.service';
 import { LoadingService } from '../../../../utils/services/loading.service';
 
@@ -16,6 +16,8 @@ export class RoleEditComponent implements OnInit {
 
   newRole: FormGroup;
   id: string = '';
+  permits: PermitApproved[] = [];
+  loading: boolean = false;
   constructor(private fb: FormBuilder,
     private route: ActivatedRoute,
     private roleService: RoleService,
@@ -43,6 +45,7 @@ export class RoleEditComponent implements OnInit {
       active: [true, Validators.required]
     })
     this.route.params.subscribe((params) => {
+      this.loading = true;
       if ('id' in params) {
         console.log(params);
         this.id = params.id;
@@ -50,6 +53,16 @@ export class RoleEditComponent implements OnInit {
           this.newRole.controls.description.setValue(currentRole.description);
           this.newRole.controls.canApprove.setValue(currentRole.canApprove);
           this.newRole.controls.active.setValue(currentRole.active);
+          this.roleService.getAssingPermits(this.id).subscribe((response: any) => {
+            console.log({ response });
+            if (response) {
+              this.permits = [...response];
+            }
+            console.log(this.permits);
+
+            this.loading = false;
+            this.loadingService.close();
+          });
         });
       }
     });
@@ -82,6 +95,24 @@ export class RoleEditComponent implements OnInit {
         this.loadingService.close();
         this.toastService.show('Error', err, 'error');
       });
+    }
+  }
+
+  async onSubmitPermits(permits: PermitApproved[]) {
+    if (permits.length <= 0) {
+      this.toastService.show('Error', 'Tiene que seleccionar al menos un permiso', 'error');
+    } else {
+      await this.loadingService.presentLoading('Guardando Permisos');
+      try {
+        await this.roleService.assingPermits(this.id, permits).toPromise();
+        this.toastService.show('Guardado Correctamente', 'Se modifico correctamente', 'success');
+
+        this.loadingService.close();
+      } catch (error) {
+        this.toastService.show('Error', 'No se pudieron guardar los permisos', 'error');
+        this.loadingService.close();
+
+      }
     }
   }
 }

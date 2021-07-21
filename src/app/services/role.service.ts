@@ -18,6 +18,12 @@ export class RoleService extends API<Role>{
     }
 
     assingPermits(id: string, permits: PermitApproved[]): Observable<Role> {
-        return this.http.post<Role>(`${URL}${id}/canApproven`, permits);
+        return this.http.post<Role>(`${this.URL}${id}/canApproven`, permits);
     }
+
+    getAssingPermits(id: string): Observable<PermitApproved[]> {
+        console.log(id);
+        return this.http.get<PermitApproved[]>(`${this.URL}permits/${id}`);
+    }
+
 }

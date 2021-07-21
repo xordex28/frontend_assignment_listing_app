@@ -18,7 +18,12 @@ export class UserService extends API<User>{
   }
 
   assingPermits(id: string, permits: PermitApproved[]): Observable<User> {
-    return this.http.post<User>(`${URL}${id}/canApproven`, permits);
+    return this.http.post<User>(`${this.URL}${id}/canApproven`, permits);
+  }
+
+  getAssingPermits(id: string): Observable<PermitApproved[]> {
+    console.log(id);    
+    return this.http.get<PermitApproved[]>(`${this.URL}permits/${id}`);
   }
 
   getUserByUsername(username: string): Observable<User> {

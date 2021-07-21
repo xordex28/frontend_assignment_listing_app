@@ -29,9 +29,29 @@ export interface Role {
 }
 
 export interface PermitApproved {
+    role?:boolean;
     client?: string;
     categories?: {
         category?: string;
         canApprove?: boolean;
     }[]
+}
+
+export interface Category {
+    _id?: string;
+    description?: string;
+    createdDate?: string;
+    updatedDate?: string;
+    active?: boolean;
+}
+export interface Client {
+    _id?: string;
+    document?: string;
+    shortName?: string;
+    name?: string;
+    phoneNumber?: string;
+    email?: string;
+    createdDate?: string;
+    updatedDate?: string;
+    active?: boolean;
 }

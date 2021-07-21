@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { UserService } from '../../../../services/user.service';
-import { Role, User } from '../../../../models/models';
+import { Role, User, PermitApproved } from '../../../../models/models';
 import { ToastService } from '../../../../utils/services/toast.service';
 import { LoadingService } from '../../../../utils/services/loading.service';
 import * as md5 from 'md5';
@@ -17,9 +17,14 @@ export class UserEditComponent implements OnInit {
   //TODO: Validacion de usuario y password no requerida, y adaptacion de roll de form builder a form control
   //TODO: Usuario buscador coincidencia
   newUser: FormGroup;
+  canApproved: boolean = false;
   roles: Role[] = [];
   id: string = '';
   userAlreadyExist: boolean = false;
+  permits: PermitApproved[] = [];
+
+  loading: boolean = false;
+
 
   validation_messages = {
     'username': [
@@ -48,13 +53,13 @@ export class UserEditComponent implements OnInit {
     private router: Router) { }
 
   async ngOnInit() {
-
+    this.loading = true;
     this.newUser = this.fb.group({
       username: ['', Validators.compose([
         Validators.required,
         Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')
       ])],
-      password: ['', Validators.compose([Validators.minLength(5)])],
+      password: [''],
       firstName: ['', Validators.compose([Validators.required])],
       lastName: ['', Validators.compose([Validators.required])],
       role: ['', Validators.compose([Validators.required])],
@@ -64,18 +69,39 @@ export class UserEditComponent implements OnInit {
     this.roles = [...(await this.roleService.list().toPromise())];
     this.route.params.subscribe((params) => {
       if ('id' in params) {
-        console.log(params);
         this.id = params.id;
         this.userService.get(this.id).subscribe((currentUser: User) => {
+          if (currentUser.role['canApprove']) {
+            this.canApproved = true;
+          }
+
           this.newUser.controls.username.setValue(currentUser.username);
           this.newUser.controls.firstName.setValue(currentUser.firstName);
           this.newUser.controls.lastName.setValue(currentUser.lastName);
           this.newUser.controls.role.setValue(currentUser.role['_id']);
           this.newUser.controls.active.setValue(currentUser.active);
+          if (this.canApproved) {
+            this.userService.getAssingPermits(this.id).subscribe((response: any) => {
+              console.log({ response });
+              if (response) {
+                this.permits = response['permitsRole'].map((current: any) => {
+                  return { ...current, role: true }
+                });
+
+                this.permits = [...this.permits, ...response['permitsUser']];
+              }
+              console.log(this.permits);
+
+              this.loading = false;
+              this.loadingService.close();
+            });
+          }
         });
       }
+      this.loadingService.close();
+
     });
-    this.loadingService.close();
+
   }
 
   async getUserByUsername() {
@@ -88,6 +114,24 @@ export class UserEditComponent implements OnInit {
         this.userAlreadyExist = false;
       }
       this.loadingService.close()
+    }
+  }
+
+  async onSubmitPermits(permits: PermitApproved[]) {
+    if (permits.length <= 0) {
+      this.toastService.show('Error', 'Tiene que seleccionar al menos un permiso', 'error');
+    } else {
+      await this.loadingService.presentLoading('Guardando Permisos');
+      try {
+        await this.userService.assingPermits(this.id, permits).toPromise();
+        this.toastService.show('Guardado Correctamente', 'Se modifico correctamente', 'success');
+
+        this.loadingService.close();
+      } catch (error) {
+        this.toastService.show('Error', 'No se pudieron guardar los permisos', 'error');
+        this.loadingService.close();
+
+      }
     }
   }
 

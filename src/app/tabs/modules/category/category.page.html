@@ -1,0 +1,19 @@
+<app-header titulo="Categorias" [backButton]="true"></app-header>
+<ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="onAdd()">
+        <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+</ion-fab>
+<ion-content class="ion-padding">
+    <ng-template #templateOpciones let-column="column" let-item="item" let-i="i">
+        <ion-button  (click)="onEdit(item)" fill="clear" shape="round">
+            <ion-icon name="create-outline"></ion-icon> Editar
+        </ion-button>
+        <ion-button  (click)="onDelete(item)" fill="clear" shape="round" color="danger">
+            <ion-icon name="trash-outline"></ion-icon> Eliminar
+        </ion-button>
+    </ng-template>
+
+    <app-generic-table #tabla [service]="categoryService" [templates]="{opciones: templateOpciones}" [serviceMethod]="'list'" [columns]="columns" [btnAdd]="true">
+    </app-generic-table>
+</ion-content>

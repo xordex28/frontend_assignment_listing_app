@@ -1,0 +1,148 @@
+<app-header [titulo]="id?'Editar Cliente':'Crear Cliente'" [backButton]="true"></app-header>
+<ion-content class="ion-padding">
+  <form [formGroup]="newClient">
+    <ion-grid>
+      <ion-row>
+        <ion-col size-xs="12" size-md="6" size-lg="4" size-xl="8" offset-xl="2">
+          <ion-row>
+            <ion-col size="6">
+              <ion-item>
+                <ion-label>Tipo de Documento</ion-label>
+                <ion-select formControlName="code" placeholder="Seleccione el tipo de Documento">
+                  <ion-select-option value="">Seleccione...</ion-select-option>
+                  <ion-select-option *ngFor="let document of documents | keyvalue" [value]="document.key">
+                    {{document.value |
+                    titlecase}}
+                  </ion-select-option>
+                </ion-select>
+              </ion-item>
+              <div class="error-container">
+                <ng-container *ngFor="let validation of validation_messages.code">
+                  <div class="error-message"
+                    *ngIf="newClient.get('code').hasError(validation.type) && (newClient.get('code').dirty || newClient.get('code').touched)">
+                    <ion-icon name="information-circle-outline"></ion-icon>
+                    <span>{{ validation.message }}</span>
+                  </div>
+                </ng-container>
+              </div>
+            </ion-col>
+            <ion-col size="6">
+              <ion-item>
+                <ion-label position="floating">Documento:</ion-label>
+                <ion-input required formControlName="document"></ion-input>
+              </ion-item>
+              <div class="error-container">
+                <ng-container *ngFor="let validation of validation_messages.document">
+                  <div class="error-message"
+                    *ngIf="newClient.get('document').hasError(validation.type) && (newClient.get('document').dirty || newClient.get('document').touched)">
+                    <ion-icon name="information-circle-outline"></ion-icon>
+                    <span>{{ validation.message }}</span>
+                  </div>
+                </ng-container>
+              </div>
+            </ion-col>
+          </ion-row>
+        </ion-col>
+        <ion-col size-xs="12" size-md="6" size-lg="4" size-xl="8" offset-xl="2">
+          <ion-item>
+            <ion-label position="floating">Nombre Corto:</ion-label>
+            <ion-input required formControlName="shortName"></ion-input>
+          </ion-item>
+          <div class="error-container">
+            <ng-container *ngFor="let validation of validation_messages.shortName">
+              <div class="error-message"
+                *ngIf="newClient.get('shortName').hasError(validation.type) && (newClient.get('shortName').dirty || newClient.get('shortName').touched)">
+                <ion-icon name="information-circle-outline"></ion-icon>
+                <span>{{ validation.message }}</span>
+              </div>
+            </ng-container>
+          </div>
+        </ion-col>
+        <ion-col size-xs="12" size-md="6" size-lg="4" size-xl="8" offset-xl="2">
+          <ion-item>
+            <ion-label position="floating">Nombre Completo:</ion-label>
+            <ion-input required formControlName="name"></ion-input>
+          </ion-item>
+          <div class="error-container">
+            <ng-container *ngFor="let validation of validation_messages.name">
+              <div class="error-message"
+                *ngIf="newClient.get('name').hasError(validation.type) && (newClient.get('name').dirty || newClient.get('name').touched)">
+                <ion-icon name="information-circle-outline"></ion-icon>
+                <span>{{ validation.message }}</span>
+              </div>
+            </ng-container>
+          </div>
+        </ion-col>
+        <ion-col size-xs="12" size-md="6" size-lg="4" size-xl="8" offset-xl="2">
+          <ion-row>
+            <ion-col size="6" >
+              <ion-item>
+                <ion-label>Codigo de Area</ion-label>
+                <ion-select formControlName="phoneCode" placeholder="Seleccione el tipo de Documento">
+                  <ion-select-option value="">Seleccione...</ion-select-option>
+                  <ion-select-option *ngFor="let country of countries | keyvalue" [value]="'+' + country.value.phone">
+                    {{country.value.name |
+                    titlecase}}
+                  </ion-select-option>
+                </ion-select>
+              </ion-item>
+              <div class="error-container">
+                <ng-container *ngFor="let validation of validation_messages.phoneCode">
+                  <div class="error-message"
+                    *ngIf="newClient.get('phoneCode').hasError(validation.type) && (newClient.get('phoneCode').dirty || newClient.get('phoneCode').touched)">
+                    <ion-icon name="information-circle-outline"></ion-icon>
+                    <span>{{ validation.message }}</span>
+                  </div>
+                </ng-container>
+              </div>
+            </ion-col>
+            <ion-col size="6" >
+              <ion-item >
+                <ion-label position="floating">Telefono:</ion-label>
+                <ion-input required formControlName="phoneNumber"></ion-input>
+              </ion-item>
+              <div class="error-container">
+                <ng-container *ngFor="let validation of validation_messages.phoneNumber">
+                  <div class="error-message"
+                    *ngIf="newClient.get('phoneNumber').hasError(validation.type) && (newClient.get('phoneNumber').dirty || newClient.get('phoneNumber').touched)">
+                    <ion-icon name="information-circle-outline"></ion-icon>
+                    <span>{{ validation.message }}</span>
+                  </div>
+                </ng-container>
+              </div>
+            </ion-col>
+          </ion-row>
+        </ion-col>
+        <ion-col size-xs="12" size-md="6" size-lg="4" size-xl="8" offset-xl="2">
+          <ion-item>
+            <ion-label position="floating">Correo:</ion-label>
+            <ion-input required formControlName="email"></ion-input>
+          </ion-item>
+          <div class="error-container">
+            <ng-container *ngFor="let validation of validation_messages.email">
+              <div class="error-message"
+                *ngIf="newClient.get('email').hasError(validation.type) && (newClient.get('email').dirty || newClient.get('email').touched)">
+                <ion-icon name="information-circle-outline"></ion-icon>
+                <span>{{ validation.message }}</span>
+              </div>
+            </ng-container>
+          </div>
+        </ion-col>
+        <ion-col size-xs="12" size-md="6" size-lg="4" size-xl="8" offset-xl="2">
+          <ion-item>
+            <ion-label>Activo</ion-label>
+            <ion-text color="danger">*</ion-text>
+            <ion-checkbox formControlName="active" slot="start"></ion-checkbox>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="12">
+          <ion-button [disabled]="!newClient.valid" (click)="onSubmit()" expand="block" fill="clear" shape="round">
+            Guardar
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+</ion-content>

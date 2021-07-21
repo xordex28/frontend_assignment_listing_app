@@ -1,0 +1,23 @@
+<span>
+  <ion-grid>
+    <ion-row>
+      <ion-col style="width: 30px;"></ion-col>
+      <ion-col *ngFor="let category of listCategories">{{category.description}}</ion-col>
+    </ion-row>
+    <ion-row *ngFor="let client of listClients">
+      <ion-col style="width: 30px;">
+        {{client.shortName}}
+      </ion-col>
+      <ion-col *ngFor="let category of listCategories">
+        <ion-checkbox #checkB (ionChange)="setPermitChecked($event,client._id, category._id)" [checked]="getPermitChecked(client._id, category._id,checkB)"></ion-checkbox>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12">
+        <ion-button (click)="savePermits()" expand="block" fill="clear" shape="round">
+          Guardar Permisos
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</span>
