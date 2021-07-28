@@ -168,6 +168,14 @@ const routes = [
             {
                 path: 'role',
                 loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_angular_material___ivy_ngcc___fesm2015_input_js-src_app_services_role_se-3e47cd"), __webpack_require__.e("src_app_tabs_modules_role_role_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./modules/role/role.module */ 44939)).then(m => m.RolePageModule)
+            },
+            {
+                path: 'category',
+                loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_tabs_modules_category_category_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./modules/category/category.module */ 23032)).then(m => m.CategoryPageModule)
+            },
+            {
+                path: 'client',
+                loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_tabs_modules_clients_clients_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./modules/clients/clients.module */ 72767)).then(m => m.ClientsPageModule)
             }
         ]
     },
@@ -305,7 +313,7 @@ class TabsPage {
     }
 }
 TabsPage.ɵfac = function TabsPage_Factory(t) { return new (t || TabsPage)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_ionic_angular__WEBPACK_IMPORTED_MODULE_1__.Platform), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_2__.Router)); };
-TabsPage.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: TabsPage, selectors: [["app-tabs"]], decls: 2, vars: 1, consts: [["slot", "bottom", 4, "ngIf"], ["slot", "bottom"], [3, "click", 4, "ngIf"], ["tab", "home"], ["name", "square"], ["tab", "user"], ["name", "person-circle-outline"], [3, "click"], ["name", "triangle"]], template: function TabsPage_Template(rf, ctx) { if (rf & 1) {
+TabsPage.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: TabsPage, selectors: [["app-tabs"]], decls: 2, vars: 1, consts: [["slot", "bottom", 4, "ngIf"], ["slot", "bottom"], [3, "click", 4, "ngIf"], ["tab", "home"], ["name", "square-outline"], ["tab", "user"], ["name", "person-circle-outline"], [3, "click"], ["name", "caret-back-outline"]], template: function TabsPage_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "ion-tabs");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, TabsPage_ion_tab_bar_1_Template, 10, 1, "ion-tab-bar", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();

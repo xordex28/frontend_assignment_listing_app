@@ -34,6 +34,10 @@ const routes: Routes = [
     path: '**',
     redirectTo: 'home',
     pathMatch: 'full'
+  },
+  {
+    path: 'task',
+    loadChildren: () => import('./modules/task/task.module').then( m => m.TaskPageModule)
   }
 
 ];

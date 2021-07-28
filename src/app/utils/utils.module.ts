@@ -11,10 +11,9 @@ import { GenericTableComponent } from './generic-table/generic-table.component';
 import { MatSortModule } from '@angular/material/sort';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { BulkloadComponent } from './bulkload/bulkload.component';
-import { CdkTableModule } from '@angular/cdk/table';
 import { ModalRefreshLoginComponent } from './modal-refresh-login/modal-refresh-login.component';
 import { AssingTasksComponent } from './assing-tasks/assing-tasks.component';
-
+import { MatIconModule } from '@angular/material/icon';
 @NgModule({
   declarations: [
     HeaderComponent,
@@ -30,9 +29,9 @@ import { AssingTasksComponent } from './assing-tasks/assing-tasks.component';
     FormsModule,
     ReactiveFormsModule,
     MatTableModule,
-    CdkTableModule,
     MatSortModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatIconModule
   ],
   exports: [
     HeaderComponent,

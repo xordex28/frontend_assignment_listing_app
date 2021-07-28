@@ -117,9 +117,9 @@
   <ion-card *ngIf="id!=='' && !loading && canApproved">
     <ion-row>
       <ion-col  size-xs="12" size-md="6" size-lg="4" size-xl="8" offset-xl="2">
-        <b> Listado de Permisos de Aprobacion por usuario</b>
+        <b style="padding: 5px;"> Listado de Permisos de Aprobacion por usuario</b>
       </ion-col>
-      <ion-col size-xs="12" size-md="6" size-lg="4" size-xl="8" offset-xl="2" >
+      <ion-col size="12">
         <app-assing-tasks [id]="id" [permits]="permits" (newPermits)="onSubmitPermits($event)"></app-assing-tasks>
       </ion-col>
     </ion-row>

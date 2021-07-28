@@ -29,7 +29,7 @@ export interface Role {
 }
 
 export interface PermitApproved {
-    role?:boolean;
+    role?: boolean;
     client?: string;
     categories?: {
         category?: string;
@@ -54,4 +54,25 @@ export interface Client {
     createdDate?: string;
     updatedDate?: string;
     active?: boolean;
+}
+
+export interface Task {
+    id_?: string;
+    client?: string;
+    category?: string;
+    description?: string;
+    fields?: {
+        type: string;
+        name: string;
+        value: string;
+    }[];
+    approved?: boolean;
+    rejected?: boolean;
+    answeredFor?: string;
+    codeValidator?: string;
+    qr?: string;
+    createdDate?: string;
+    updatedDate?: string;
+    active?: boolean;
+
 }
