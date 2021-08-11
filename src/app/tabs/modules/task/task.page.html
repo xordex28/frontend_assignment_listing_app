@@ -1,9 +1,116 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>task</ion-title>
-  </ion-toolbar>
-</ion-header>
+<app-header titulo="Solicitudes" [backButton]="true"></app-header>
+<ion-fab vertical="bottom" horizontal="end" slot="fixed">
+  <ion-fab-button (click)="onAdd()">
+    <ion-icon name="add"></ion-icon>
+  </ion-fab-button>
+</ion-fab>
+<ion-content class="ion-padding">
+  <ion-grid>
+    <ion-row>
+      <ion-col class="title-section" size="12">Generales</ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size-xs="12" size-md="6" size-lg="4" size-xl="3" *ngIf="pending !== {}">
+        <ion-card [ngClass]="{'indicatorSelected': indexSectionSelected===0}" (click)="selectSectionTask(pending,0)">
+          <ion-card-header>
+            <ion-card-title class="title">Pendientes
+            </ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <p class="indicator">
+              {{
+              (pending?.entered?.length + pending?.answered?.length + pending?.all?.length)
+              }}
+            </p>
+          </ion-card-content>
+        </ion-card>
+        <!-- <ion-badge style="position: absolute; top:0px;right: 0px;border-radius: 25px;" color="primary">{{tasks?.entered?.length}} -->
+        <!-- </ion-badge> -->
+      </ion-col>
+      <ion-col size-xs="12" size-md="6" size-lg="4" size-xl="3" *ngIf="approved !== {}">
+        <ion-card [ngClass]="{'indicatorSelected': indexSectionSelected===1}" (click)="selectSectionTask(approved,1)">
+          <ion-card-header>
+            <ion-card-title class="title">Aprobadas
+            </ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <p class="indicator">
+              {{
+              (approved?.entered?.length + approved?.answered?.length + approved?.all?.length)
+              }}
+            </p>
+          </ion-card-content>
+        </ion-card>
 
-<ion-content>
-
+      </ion-col>
+      <ion-col size-xs="12" size-md="6" size-lg="4" size-xl="3" *ngIf="reject !== {}">
+        <ion-card [ngClass]="{'indicatorSelected': indexSectionSelected===2}" (click)="selectSectionTask(reject,2)">
+          <ion-card-header>
+            <ion-card-title class="title">Rechazadas
+            </ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <p class="indicator">
+              {{
+              (reject?.entered?.length + reject?.answered?.length + reject?.all?.length)
+              }}
+            </p>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-row *ngIf="indexSectionSelected > -1">
+      <ion-col class="title-section" size="12">
+        {{indexSectionSelected === 0?'Listado de Pendientes':indexSectionSelected===1?'Listado de Aprobadas':'Listado de
+        Rechazadas'}}
+      </ion-col>
+    </ion-row>
+    <ion-row *ngIf="taskSelect">
+      <ion-col size-xs="12" size-md="6" size-lg="4" size-xl="3">
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title class="title">Ingresadas
+            </ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <p class="indicator">
+              {{
+              (taskSelect?.entered?.length)
+              }}
+            </p>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col size-xs="12" size-md="6" size-lg="4" size-xl="3">
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title class="title">Respondidas
+            </ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <p class="indicator">
+              {{
+              (taskSelect?.answered?.length)
+              }}
+            </p>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col size-xs="12" size-md="6" size-lg="4" size-xl="3">
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title class="title">Otras
+            </ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <p class="indicator">
+              {{
+              (taskSelect?.all?.length)
+              }}
+            </p>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

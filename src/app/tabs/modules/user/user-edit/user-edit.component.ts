@@ -14,8 +14,6 @@ import { RoleService } from '../../../../services/role.service';
   styleUrls: ['./user-edit.component.scss'],
 })
 export class UserEditComponent implements OnInit {
-  //TODO: Validacion de usuario y password no requerida, y adaptacion de roll de form builder a form control
-  //TODO: Usuario buscador coincidencia
   newUser: FormGroup;
   canApproved: boolean = false;
   roles: Role[] = [];

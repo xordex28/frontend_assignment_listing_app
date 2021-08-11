@@ -45,6 +45,7 @@ export class LoginPage implements OnInit {
 
   async login() {
     this.cargando = true;
+    
     this.authService.login(this.loginForm.value.email,
       this.loginForm.value.password).subscribe((data: User) => {
         console.log(data);

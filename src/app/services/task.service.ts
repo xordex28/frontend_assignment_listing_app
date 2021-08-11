@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { API } from '../utils/requests/api';
-import { Task } from '../models/models';
+import { Task, TaskResponse } from '../models/models';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -17,8 +17,7 @@ export class TaskService extends API<Task>{
         super(http);
     }
 
-    getTaskPending() {
-        
+    getAllTask(params?: {}): Observable<TaskResponse> {
+        return this.http.get<TaskResponse>(this.URL, { params });
     }
-
 }

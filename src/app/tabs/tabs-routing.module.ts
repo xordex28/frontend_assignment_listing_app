@@ -26,7 +26,11 @@ const routes: Routes = [
       },
       {
         path: 'client',
-        loadChildren: () => import('./modules/clients/clients.module').then( m => m.ClientsPageModule)
+        loadChildren: () => import('./modules/clients/clients.module').then(m => m.ClientsPageModule)
+      },
+      {
+        path: 'task',
+        loadChildren: () => import('./modules/task/task.module').then(m => m.TaskPageModule)
       }
     ]
   },
@@ -34,10 +38,6 @@ const routes: Routes = [
     path: '**',
     redirectTo: 'home',
     pathMatch: 'full'
-  },
-  {
-    path: 'task',
-    loadChildren: () => import('./modules/task/task.module').then( m => m.TaskPageModule)
   }
 
 ];

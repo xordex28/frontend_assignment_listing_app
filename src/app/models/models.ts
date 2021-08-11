@@ -7,6 +7,7 @@ export interface User {
     _id?: string;
     username?: string;
     accesToken?: string;
+    token?: string;
     firstName?: string;
     lastName?: string;
     role?: string | Role;
@@ -74,5 +75,10 @@ export interface Task {
     createdDate?: string;
     updatedDate?: string;
     active?: boolean;
+}
 
+export interface TaskResponse {
+    all?: Task[];
+    answered?: Task[];
+    entered?: Task[];
 }

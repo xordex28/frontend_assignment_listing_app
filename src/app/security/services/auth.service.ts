@@ -38,7 +38,7 @@ export class AuthService extends API<AuthModel> {
           localStorage.setItem(API.ID, response._id);
           localStorage.setItem(API.NAME, (response.firstName + ' ' + response.lastName));
           localStorage.setItem(API.EMAIL, email);
-          localStorage.setItem(API.TOKEN, response.accesToken);
+          localStorage.setItem(API.TOKEN, response.token);
           let date = moment(new Date()).format();
           localStorage.setItem(API.DATE_LAST_TOKEN_REFRESH, date);
           console.log(API.DATE_LAST_TOKEN_REFRESH, date);
